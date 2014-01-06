@@ -104,3 +104,76 @@ These methods can be used like so:
         this.draw();
     });
 
+##Real Example
+
+Lets say you have an image loaded in from another services (Flickr etc), and you want to resize it for your application, and you want a nice 500px square showing as much of the image as possible. 
+
+It would be really simple:
+
+The first thing you want to do is scale down your image so the smallest side 500px with `scaleMinTo()`
+
+    im.load(function(){
+        // set smallest side to 500px
+        this.scaleMinTo(500);
+        
+    });
+
+Now if the image is portrait we can use `cropHeight()` like so to remove the top and bottom parts
+
+    im.load(function(){
+        // set smallest side to 500px
+        this.scaleMinTo(500);
+        
+        // removes same amount from top and bottom
+        this.cropHeight(500);
+    });
+
+However if the image is landscape we will want to use `cropWidth()` to remove the left and right parts, but how do we know? 
+
+We dont need to know we can just do both like this:
+
+    im.load(function(){
+        // set smallest side to 500px
+        this.scaleMinTo(500);
+        
+        // removes same amount from top and bottom
+        this.cropHeight(500);
+
+        // removes same amount from left and right
+        this.cropWidth(500);
+    });
+
+The reason we can just do both is if the image is portrait, then its width will already be 500px from using `scaleMinTo()` so using `cropWidth()` will have no effect.
+
+The last thing left to do is `draw()` the image to the canvas.
+
+    im.load(function(){
+        // set smallest side to 500px
+        this.scaleMinTo(500);
+        
+        // removes same amount from top and bottom
+        this.cropHeight(500);
+
+        // removes same amount from left and right
+        this.cropWidth(500);
+
+        // draw to canvas
+        this.draw();
+    });
+
+You can combine all these methods into one line to make things a bit cleaner:
+
+    im.load(function(){
+        this.scaleMinTo(500).cropHeight(500).cropWidth(500).draw();
+    });
+
+To clean things up even further you can use the built in `square()` method which we just replicated:
+
+    im.load(function(){
+        this.square(500).draw();
+    });
+
+Contributions
+=================
+
+This mini library was built for my own needs, however if you spot any errors or have any suggestions please create an issue to pull request and I will be happy to help.
