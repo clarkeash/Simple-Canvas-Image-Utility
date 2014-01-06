@@ -177,3 +177,27 @@ Contributions
 =================
 
 This mini library was built for my own needs, however if you spot any errors or have any suggestions please create an issue or pull request and I will be happy to help.
+
+Planned Features
+==================
+
+###Shapes
+
+Add in more shapes to draw
+
+* [ ] Cirlce
+* [ ] Triangle
+* [ ] Star
+
+And if we can draw in these shapes it would be nice if we can crop/remove areas of these shapes
+
+###Manipulation
+
+It would also be nice to manipulate the way the image looks
+
+* [ ] Rotation
+* [ ] Flip
+* [ ] Grayscale?
+
+All suggestions are welcome :D
+
