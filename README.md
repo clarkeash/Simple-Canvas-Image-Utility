@@ -71,3 +71,22 @@ On the reverse we have:
     });
 
 This will make the smallest dimension of the image 600px and the other dimension will be scaled too (and be larger)
+
+###Cropping
+
+There are 4 basic cropping methods all work in the same way: 
+
+    im.load(function(){
+        this.cropRight(600);
+        this.draw();
+    });
+
+Above we are using the `cropRight()` method, this will remove everything on the `right` side of the image leaving 600px.
+
+####Cropping methods
+
+* `cropRight()`
+* `cropLeft()`
+* `cropBottom()`
+* `cropTop()`
+
