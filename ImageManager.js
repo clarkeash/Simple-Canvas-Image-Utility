@@ -52,7 +52,7 @@ var ImageManager = function(src, canvasId){
         dest: {x:0, y:0, width:0, height:0},
         scale: 1,
         load: function(callback){
-            self = this;
+            var self = this;
             this.image.onload = function(){
                 _secretCanvas.setSize(self.image.width, self.image.height);
                 _secretCanvas.draw(self.image);
