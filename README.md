@@ -176,4 +176,4 @@ To clean things up even further you can use the built in `square()` method which
 Contributions
 =================
 
-This mini library was built for my own needs, however if you spot any errors or have any suggestions please create an issue to pull request and I will be happy to help.
+This mini library was built for my own needs, however if you spot any errors or have any suggestions please create an issue or pull request and I will be happy to help.
