@@ -27,7 +27,7 @@ Inside your script tag, or seperate JS file, you can initialise the ImageManager
 
 ###Load
 
-To make sure the image has been loaded before we start editing it we use the `load` function and pass it a call back like so: 
+To make sure the image has been loaded before we start editing it we use the `load` function and pass it a callback like so: 
 
     im.load(function(){
         // do everything else here
@@ -51,3 +51,23 @@ Similarly we can scale to a set height with `scaleHeightTo(value)`:
         this.scaleHeightTo(600);
         this.draw();
     });
+
+###Scaling an image to the largest or smallest dimension.
+
+Sometimes you may not know if you want the width or the height to be set in those cases you can do this:
+
+    im.load(function(){
+        this.scaleMaxTo(600);
+        this.draw();
+    });
+
+This will make the largest dimension of the image 600px and the other dimension will be scaled too (and be smaller);
+
+On the reverse we have:
+
+    im.load(function(){
+        this.scaleMinTo(600);
+        this.draw();
+    });
+
+This will make the smallest dimension of the image 600px and the other dimension will be scaled too (and be larger)
