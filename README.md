@@ -81,7 +81,7 @@ There are 4 basic cropping methods all work in the same way:
         this.draw();
     });
 
-Above we are using the `cropRight()` method, this will remove everything on the `right` side of the image leaving 600px.
+Above we are using the `cropRight()` method, this will remove everything on the `right` side of the image leaving the leftmost 600px.
 
 ####Cropping methods
 
@@ -89,4 +89,18 @@ Above we are using the `cropRight()` method, this will remove everything on the 
 * `cropLeft()`
 * `cropBottom()`
 * `cropTop()`
+
+Further cropping, sometimes you may wish to crop the same amount from both sides and leave the part in the middle we can do that with:
+
+####Cropping methods
+
+* `cropWidth()` removes an equal amount left & right
+* `cropHeight()` removes an equal amount top & bottom
+
+These methods can be used like so:
+
+    im.load(function(){
+        this.cropHeight(600);
+        this.draw();
+    });
 
