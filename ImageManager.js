@@ -171,11 +171,8 @@ var ImageManager = function(src, canvasId){
         },
         square: function(value){
             this.scaleMinTo(value);
-            if (_private.image.width > _private.image.height) {
-                this.cropWidth(value);
-            }else{
-                this.cropHeight(value);
-            }
+            this.cropHeight(value);
+            this.cropWidth(value);
             return this;
         }
     }
